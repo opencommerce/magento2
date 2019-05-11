@@ -60,6 +60,10 @@ class Stock extends UnsubscribeController
                     $this->_objectManager->get(\Magento\Store\Model\StoreManagerInterface::class)
                         ->getStore()
                         ->getWebsiteId()
+                )->setStoreId(
+                    $this->_objectManager->get(\Magento\Store\Model\StoreManagerInterface::class)
+                        ->getStore()
+                        ->getStoreId()
                 )
                 ->loadByParam();
             if ($model->getId()) {
